@@ -35,8 +35,8 @@ O site divulga os cursos de ortodontia, DTM e bruxismo, estética e harmonizaç�
 ## Instalação
 
 ```bash
-git clone <url-do-repositorio>
-cd coude-eventos
+git clone https://github.com/drandersongois/instituto-dr-anderson-gois.git
+cd instituto-dr-anderson-gois
 composer install
 cp .env.example .env
 php artisan key:generate
