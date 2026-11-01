@@ -1,0 +1,1130 @@
+
+/* ========================================
+   1. Variáveis globais
+======================================== */
+
+:root {
+    --color-primary: #111111;
+    --color-primary-hover: #2b2b2b;
+    --color-black: #0a0a0a;
+    --color-orange: #f97316;
+    --color-orange-hover: #fb923c;
+    --color-accent: #c2410c;
+    --color-text: #1f2937;
+    --color-text-muted: #6b7280;
+    --color-background: #f8fafc;
+    --color-border: #e5e7eb;
+    --color-white: #ffffff;
+
+    --font-family-base: "Roboto", sans-serif;
+    --font-family-heading: "Source Serif 4", Georgia, serif;
+
+    --container-width: 1200px;
+
+    --shadow-header: 0 2px 12px rgb(0 0 0 / 5%);
+    --transition-default: 0.2s ease;
+}
+
+/* ========================================
+   2. Estilos gerais
+======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+
+    font-family: var(--font-family-base);
+    color: var(--color-text);
+    background-color: var(--color-background);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Mantém o conteúdo entre o cabeçalho e o rodapé */
+.site-main {
+    flex: 1;
+    width: 100%;
+}
+
+/* ========================================
+   3. Cabeçalho e navegação
+======================================== */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+
+    border-bottom: 3px solid var(--color-orange);
+
+    background-color: var(--color-black);
+    box-shadow: var(--shadow-header);
+}
+
+.site-header .navbar {
+    min-height: 80px;
+    padding-block: 12px;
+}
+
+.site-logo {
+    display: block;
+    width: auto;
+    max-width: 250px;
+    max-height: 52px;
+    object-fit: contain;
+}
+
+.site-header .nav-link {
+    padding: 10px 14px;
+
+    color: var(--color-white);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition:
+        color var(--transition-default),
+        background-color var(--transition-default);
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus-visible {
+    color: var(--color-orange);
+}
+
+/* Botão de cadastro */
+.nav-register {
+    padding: 10px 20px;
+
+    border: 1px solid var(--color-orange);
+    border-radius: 8px;
+
+    background-color: var(--color-orange);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition:
+        background-color var(--transition-default),
+        border-color var(--transition-default),
+        transform var(--transition-default);
+}
+
+.nav-register:hover {
+    background-color: var(--color-orange-hover);
+    border-color: var(--color-orange-hover);
+    transform: translateY(-1px);
+}
+
+/* Foco visível para navegação por teclado */
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+    outline: 3px solid rgb(249 115 22 / 70%);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   4. Botões globais
+======================================== */
+
+/* Laranja com texto preto: branco sobre laranja fica difícil de ler */
+.btn-primary {
+    --bs-btn-color: #111111;
+    --bs-btn-bg: var(--color-orange);
+    --bs-btn-border-color: var(--color-orange);
+
+    --bs-btn-hover-color: #111111;
+    --bs-btn-hover-bg: var(--color-orange-hover);
+    --bs-btn-hover-border-color: var(--color-orange-hover);
+
+    --bs-btn-active-color: #111111;
+    --bs-btn-active-bg: var(--color-orange-hover);
+    --bs-btn-active-border-color: var(--color-orange-hover);
+
+    --bs-btn-focus-shadow-rgb: 249, 115, 22;
+
+    font-weight: 500;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--color-primary);
+    --bs-btn-border-color: var(--color-primary);
+
+    --bs-btn-hover-color: var(--color-white);
+    --bs-btn-hover-bg: var(--color-primary);
+    --bs-btn-hover-border-color: var(--color-primary);
+
+    --bs-btn-active-color: var(--color-white);
+    --bs-btn-active-bg: var(--color-primary-hover);
+    --bs-btn-active-border-color: var(--color-primary-hover);
+
+    --bs-btn-focus-shadow-rgb: 17, 17, 17;
+}
+
+/* ========================================
+   5. Rodapé
+======================================== */
+
+.site-footer {
+    margin-top: auto;
+    padding: 24px 0;
+
+    border-top: 3px solid var(--color-orange);
+
+    background-color: var(--color-black);
+
+    color: #d4d4d4;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/* ========================================
+   6. Responsividade
+======================================== */
+
+@media (max-width: 991.98px) {
+    .site-header .navbar {
+        min-height: 72px;
+    }
+
+    .site-logo {
+        max-width: 215px;
+        max-height: 46px;
+    }
+
+    .site-header .navbar-collapse {
+        padding-top: 16px;
+    }
+
+    .site-header .navbar-nav {
+        align-items: stretch !important;
+        gap: 4px;
+    }
+
+    .site-header .nav-link {
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .site-header .nav-link:hover {
+        background-color: #1f1f1f;
+    }
+
+    .nav-register {
+        display: inline-block;
+        margin-top: 8px;
+        text-align: center;
+    }
+}
+
+/* Respeita usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+/* ========================================
+   PÁGINA DE EVENTOS
+======================================== */
+
+.events-page {
+    min-height: 100%;
+}
+
+/* ========================================
+   BUSCA
+======================================== */
+
+.event-search {
+    padding: 84px 0 76px;
+    background-color: var(--color-black);
+}
+
+.event-search .section-eyebrow {
+    color: var(--color-orange);
+}
+
+.event-search-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.event-search h1 {
+    margin: 0 0 16px;
+
+    color: var(--color-white);
+    font-family: var(--font-family-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.event-search-content > p {
+    max-width: 580px;
+    margin: 0 auto 28px;
+
+    color: #d4d4d4;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.event-search-form {
+    width: 100%;
+}
+
+.search-input-wrapper {
+    display: flex;
+    gap: 12px;
+
+    padding: 8px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    background-color: var(--color-white);
+    box-shadow: 0 8px 30px rgb(15 23 42 / 5%);
+
+    transition: border-color var(--transition-default),
+                box-shadow var(--transition-default);
+}
+
+.search-input-wrapper:focus-within {
+    border-color: var(--color-orange);
+    box-shadow: 0 0 0 4px rgb(249 115 22 / 30%);
+}
+
+.search-input-wrapper .form-control {
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 16px;
+
+    border: 0;
+    box-shadow: none;
+
+    color: var(--color-text);
+    background: transparent;
+}
+
+.search-input-wrapper .form-control:focus {
+    outline: none;
+}
+
+.search-input-wrapper .form-control::placeholder {
+    color: #9ca3af;
+}
+
+.search-input-wrapper .btn {
+    flex-shrink: 0;
+    min-height: 48px;
+    padding: 12px 22px;
+
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ========================================
+   SEÇÃO DE EVENTOS
+======================================== */
+
+.events-section {
+    padding: 64px 0 80px;
+}
+
+.events-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 32px;
+}
+
+.events-section-header h2 {
+    margin: 0 0 8px;
+
+    color: var(--color-primary);
+    font-family: var(--font-family-heading);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.events-section-header p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.create-event-button {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ========================================
+   CARDS DE EVENTOS
+======================================== */
+
+.event-card {
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+
+    background-color: var(--color-white);
+
+    box-shadow: 0 4px 16px rgb(15 23 42 / 3%);
+
+    transition:
+        transform var(--transition-default),
+        box-shadow var(--transition-default),
+        border-color var(--transition-default);
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #d1d5db;
+
+    box-shadow: 0 14px 30px rgb(15 23 42 / 8%);
+}
+
+.event-image-wrapper {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background-color: #e5e7eb;
+}
+
+.event-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.35s ease;
+}
+
+.event-card:hover .event-image {
+    transform: scale(1.04);
+}
+
+.event-card-body {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+    padding: 22px;
+}
+
+.event-card-title {
+    margin-bottom: 12px;
+
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.event-card-description {
+    margin-bottom: 24px;
+
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.event-card-footer {
+    margin-top: auto;
+}
+
+.event-details-button {
+    display: block;
+    width: 100%;
+
+    padding: 11px 16px;
+
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ========================================
+   ESTADO VAZIO
+======================================== */
+
+.events-empty-state {
+    padding: 56px 24px;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.events-empty-state h3 {
+    margin-bottom: 12px;
+
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.events-empty-state p {
+    max-width: 480px;
+    margin: 0 auto 22px;
+
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 767.98px) {
+    .event-search {
+        padding: 52px 0 48px;
+    }
+
+    .event-search-content > p {
+        font-size: 0.95rem;
+    }
+
+    .events-section {
+        padding: 44px 0 56px;
+    }
+
+    .events-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .create-event-button {
+        width: 100%;
+    }
+
+    .event-card-body {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .search-input-wrapper {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .search-input-wrapper .btn {
+        width: 100%;
+    }
+
+    .event-search h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .event-card,
+    .event-image {
+        transition: none;
+    }
+
+    .event-card:hover,
+    .event-card:hover .event-image {
+        transform: none;
+    }
+}
+
+
+
+/* ========================================
+   CRIAR EVENTO
+======================================== */
+
+.event-create-page {
+    padding: 64px 0 80px;
+}
+
+.event-create-wrapper {
+    width: 100%;
+    max-width: 760px;
+    margin-inline: auto;
+}
+
+/* Cabeçalho */
+
+.event-create-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.event-create-header .section-eyebrow {
+    margin-bottom: 12px;
+}
+
+.event-create-header h1 {
+    margin: 0 0 14px;
+
+    color: var(--color-primary);
+    font-family: var(--font-family-heading);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.event-create-header p {
+    max-width: 560px;
+    margin: 0 auto;
+
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Cartão do formulário */
+
+.event-create-card {
+    padding: 36px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+
+    background-color: var(--color-white);
+    box-shadow: 0 8px 30px rgb(15 23 42 / 4%);
+}
+
+/* Campos */
+
+.event-create-form .form-label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--color-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.event-create-form .form-control,
+.event-create-form .form-select {
+    min-height: 48px;
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    color: var(--color-text);
+    background-color: var(--color-white);
+
+    font-family: inherit;
+    font-size: 0.95rem;
+
+    transition:
+        border-color var(--transition-default),
+        box-shadow var(--transition-default);
+}
+
+.event-create-form textarea.form-control {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.event-create-form .form-control::placeholder {
+    color: #9ca3af;
+}
+
+.event-create-form .form-control:focus,
+.event-create-form .form-select:focus {
+    border-color: var(--color-orange);
+    box-shadow: 0 0 0 4px rgb(249 115 22 / 18%);
+}
+
+.event-create-form .form-text {
+    margin-top: 9px;
+
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Validação */
+
+.event-create-form .is-invalid {
+    border-color: #dc3545;
+}
+
+.event-create-form .is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 4px rgb(220 53 69 / 10%);
+}
+
+.event-create-form .invalid-feedback {
+    margin-top: 7px;
+    font-size: 0.85rem;
+}
+
+/* Botões */
+
+.event-create-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    padding-top: 24px;
+    margin-top: 12px;
+
+    border-top: 1px solid var(--color-border);
+}
+
+.event-create-actions .btn {
+    min-height: 46px;
+    padding: 11px 22px;
+
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.event-create-actions .cancel-button {
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.event-create-actions .cancel-button:hover {
+    background-color: var(--color-background);
+}
+
+.event-create-actions .submit-button {
+    min-width: 160px;
+}
+
+/* Mensagem de orientação */
+
+.event-create-note {
+    margin: 20px 0 0;
+
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Responsividade */
+
+@media (max-width: 575.98px) {
+    .event-create-page {
+        padding: 40px 0 56px;
+    }
+
+    .event-create-header {
+        margin-bottom: 24px;
+    }
+
+    .event-create-card {
+        padding: 24px 18px;
+        border-radius: 12px;
+    }
+
+    .event-create-actions {
+        flex-direction: column-reverse;
+    }
+
+    .event-create-actions .btn {
+        width: 100%;
+    }
+}
+
+
+/* Mensagens de feedback */
+
+.app-alert {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 16px 48px 16px 18px;
+
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.app-alert.alert-success {
+    border: 1px solid #a7f3d0;
+    background-color: #ecfdf5;
+    color: #065f46;
+}
+
+.app-alert .btn-close {
+    padding: 20px;
+}
+
+@media (max-width: 767.98px) {
+    .app-alert {
+        margin: 16px;
+    }
+}
+
+/* ========================================
+   CABEÇALHO: USUÁRIO LOGADO
+======================================== */
+
+.nav-user {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 14px;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.nav-user {
+    color: var(--color-white);
+}
+
+.nav-user small {
+    color: #d4d4d4;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.nav-logout {
+    --bs-btn-color: var(--color-white);
+    --bs-btn-border-color: #737373;
+    --bs-btn-hover-color: #111111;
+    --bs-btn-hover-bg: var(--color-orange);
+    --bs-btn-hover-border-color: var(--color-orange);
+
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   CARDS DE CURSOS: ÁREA E DADOS
+======================================== */
+
+.event-card-area {
+    margin-bottom: 8px;
+
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.event-card-meta {
+    margin-bottom: 12px;
+
+    color: var(--color-text);
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   SOBRE O DR ANDERSON GOIS
+======================================== */
+
+.about-section {
+    padding: 64px 0;
+
+    border-top: 1px solid var(--color-border);
+
+    background-color: var(--color-white);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    max-width: 860px;
+    margin-inline: auto;
+}
+
+.about-photo {
+    flex-shrink: 0;
+    width: 220px;
+    height: 260px;
+
+    border-radius: 14px;
+
+    object-fit: cover;
+    object-position: top;
+}
+
+.about-content h2 {
+    margin: 0 0 12px;
+
+    color: var(--color-primary);
+    font-family: var(--font-family-heading);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+.about-content p {
+    margin: 0;
+
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* ========================================
+   DETALHES DO CURSO
+======================================== */
+
+.event-show-page {
+    padding: 40px 0 80px;
+}
+
+.event-show-back {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.event-show-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    border-radius: 14px;
+
+    object-fit: cover;
+}
+
+.event-show-subtitle {
+    margin: 32px 0 12px;
+
+    color: var(--color-primary);
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.event-show-description {
+    color: var(--color-text);
+    line-height: 1.75;
+    white-space: pre-line;
+}
+
+.event-show-instructor {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 28px;
+    padding-top: 24px;
+
+    border-top: 1px solid var(--color-border);
+}
+
+.event-show-instructor img {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center 15%;
+}
+
+.event-show-instructor strong,
+.event-show-instructor span {
+    display: block;
+}
+
+.event-show-instructor span {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.event-show-card {
+    position: sticky;
+    top: 24px;
+
+    padding: 28px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+
+    background-color: var(--color-white);
+    box-shadow: 0 8px 30px rgb(15 23 42 / 4%);
+}
+
+.event-show-card h1 {
+    margin: 0 0 20px;
+
+    color: var(--color-primary);
+    font-family: var(--font-family-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.event-show-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+
+    margin: 0;
+}
+
+.event-show-details dt {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.event-show-details dd {
+    margin: 0;
+
+    font-weight: 500;
+    text-align: right;
+}
+
+.event-show-private {
+    margin: 20px 0 0;
+
+    color: var(--color-accent);
+    font-size: 0.9rem;
+}
+
+.event-show-actions {
+    display: grid;
+    gap: 10px;
+
+    margin-top: 24px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--color-border);
+}
+
+/* ========================================
+   LOGIN
+======================================== */
+
+.login-wrapper {
+    max-width: 460px;
+}
+
+.login-button {
+    min-height: 46px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ========================================
+   TABELAS DE GESTÃO
+======================================== */
+
+.data-table-wrapper {
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+
+    background-color: var(--color-white);
+}
+
+.data-table-wrapper th {
+    padding: 14px 16px;
+
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.data-table-wrapper td {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+}
+
+.data-table-wrapper tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-agendado {
+    background-color: #fff7ed;
+    color: #9a3412;
+}
+
+.status-confirmado {
+    background-color: #ecfdf5;
+    color: #065f46;
+}
+
+.status-concluido {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.status-cancelado {
+    background-color: #fef2f2;
+    color: #991b1b;
+}
+
+@media (max-width: 575.98px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-show-card {
+        position: static;
+    }
+}

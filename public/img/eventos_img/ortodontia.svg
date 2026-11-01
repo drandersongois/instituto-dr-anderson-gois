@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Ortodontia">
+  <rect width="800" height="500" fill="#0a0a0a"/>
+  <path d="M90 225 C 250 305, 550 305, 710 225" fill="none" stroke="#f97316" stroke-width="7"/>
+  <g fill="#ffffff">
+    <rect x="130" y="222" width="52" height="52" rx="8" transform="rotate(14 156 248)"/>
+    <rect x="228" y="250" width="52" height="52" rx="8" transform="rotate(8 254 276)"/>
+    <rect x="322" y="264" width="52" height="52" rx="8"/>
+    <rect x="426" y="264" width="52" height="52" rx="8"/>
+    <rect x="520" y="250" width="52" height="52" rx="8" transform="rotate(-8 546 276)"/>
+    <rect x="618" y="222" width="52" height="52" rx="8" transform="rotate(-14 644 248)"/>
+  </g>
+  <text x="400" y="110" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#ffffff">Ortodontia</text>
+</svg>

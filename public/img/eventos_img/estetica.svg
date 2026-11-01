@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Estética">
+  <rect width="800" height="500" fill="#f97316"/>
+  <path d="M210 235 C 280 370, 520 370, 590 235 C 500 270, 300 270, 210 235 Z" fill="#ffffff"/>
+  <g fill="#ffffff">
+    <path d="M620 150 l10 28 l28 10 l-28 10 l-10 28 l-10 -28 l-28 -10 l28 -10 z"/>
+    <path d="M170 170 l6 17 l17 6 l-17 6 l-6 17 l-6 -17 l-17 -6 l17 -6 z"/>
+  </g>
+  <text x="400" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#0a0a0a">Estética</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="DTM e Bruxismo">
+  <rect width="800" height="500" fill="#1c1c1c"/>
+  <g fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round">
+    <path d="M170 240 q58 -48 116 0 t116 0 t116 0 t116 0"/>
+    <path d="M170 310 q58 48 116 0 t116 0 t116 0 t116 0"/>
+  </g>
+  <circle cx="400" cy="275" r="17" fill="#ffffff"/>
+  <text x="400" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#ffffff">DTM e Bruxismo</text>
+</svg>

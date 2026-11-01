@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Curso">
+  <rect width="800" height="500" fill="#0a0a0a"/>
+  <circle cx="400" cy="250" r="118" fill="#f97316"/>
+  <text x="400" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="82" font-weight="700" fill="#0a0a0a">AG</text>
+</svg>

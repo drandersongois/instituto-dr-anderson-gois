@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Harmonização">
+  <rect width="800" height="500" fill="#2b2b2b"/>
+  <path d="M400 165 C 305 165, 280 250, 305 320 C 325 375, 370 420, 400 420 C 430 420, 475 375, 495 320 C 520 250, 495 165, 400 165 Z" fill="none" stroke="#ffffff" stroke-width="6"/>
+  <path d="M400 150 V 435 M270 262 H 530" stroke="#f97316" stroke-width="3" stroke-dasharray="10 9"/>
+  <text x="400" y="105" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#ffffff">Harmonização</text>
+</svg>
