@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
                 'data_inicio' => '2027-03-13',
                 'carga_horaria' => 120,
                 'valor' => 4800,
-                'imagem' => 'ortodontia.svg',
+                'imagem' => 'ortodontia.png',
                 'descricao' => "Formação prática para o cirurgião-dentista que deseja conduzir casos ortodônticos com segurança, do planejamento à contenção.\n\nO curso aborda documentação e diagnóstico, cefalometria, biomecânica, colagem de bráquetes e sequência de fios, com discussão de casos reais e atividades práticas em manequim.",
             ],
             [
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
                 'data_inicio' => '2027-04-10',
                 'carga_horaria' => 40,
                 'valor' => 2200,
-                'imagem' => 'dtm-bruxismo.svg',
+                'imagem' => 'dtm-bruxismo.jpg',
                 'descricao' => "Um curso para reconhecer, diagnosticar e acompanhar pacientes com disfunção temporomandibular e bruxismo.\n\nO conteúdo inclui anatomia da ATM, anamnese e exame físico, diagnóstico diferencial da dor orofacial, confecção e ajuste de placas oclusais, abordagem multidisciplinar e protocolos de acompanhamento.",
             ],
             [
@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
                 'data_inicio' => '2027-05-15',
                 'carga_horaria' => 48,
                 'valor' => 2900,
-                'imagem' => 'estetica.svg',
+                'imagem' => 'estetica.webp',
                 'descricao' => "Do planejamento à entrega, este curso reúne os principais recursos da odontologia estética restauradora.\n\nAs aulas abordam análise facial e dental, fotografia odontológica, enceramento e mock-up, clareamento, facetas diretas em resina composta, acabamento e polimento, com prática supervisionada.",
             ],
             [
@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
                 'data_inicio' => '2027-06-12',
                 'carga_horaria' => 60,
                 'valor' => 3600,
-                'imagem' => 'harmonizacao.svg',
+                'imagem' => 'harmonizacao.jpg',
                 'descricao' => "Introdução responsável à harmonização orofacial para cirurgiões-dentistas, com foco em anatomia e segurança.\n\nO programa abrange anatomia aplicada da face, avaliação e planejamento, toxina botulínica, preenchedores à base de ácido hialurônico, biossegurança e conduta diante de intercorrências.",
             ],
         ];
