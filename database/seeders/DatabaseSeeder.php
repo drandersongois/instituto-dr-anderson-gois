@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             [
                 'titulo' => 'Ortodontia Clínica: do Diagnóstico à Finalização',
                 'area' => 'Ortodontia',
-                'cidade' => 'São Paulo',
+                'cidade' => 'Feira de Santana - BA',
                 'data_inicio' => '2027-03-13',
                 'carga_horaria' => 120,
                 'valor' => 4800,
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             [
                 'titulo' => 'DTM e Bruxismo: Diagnóstico e Manejo Clínico',
                 'area' => 'DTM e Bruxismo',
-                'cidade' => 'São Paulo',
+                'cidade' => 'Feira de Santana - BA',
                 'data_inicio' => '2027-04-10',
                 'carga_horaria' => 40,
                 'valor' => 2200,
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
             [
                 'titulo' => 'Estética do Sorriso: Resinas e Planejamento Digital',
                 'area' => 'Estética',
-                'cidade' => 'Rio de Janeiro',
+                'cidade' => 'Feira de Santana - BA',
                 'data_inicio' => '2027-05-15',
                 'carga_horaria' => 48,
                 'valor' => 2900,
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
             [
                 'titulo' => 'Harmonização Orofacial: Fundamentos e Prática',
                 'area' => 'Harmonização',
-                'cidade' => 'Belo Horizonte',
+                'cidade' => 'Feira de Santana - BA',
                 'data_inicio' => '2027-06-12',
                 'carga_horaria' => 60,
                 'valor' => 3600,
