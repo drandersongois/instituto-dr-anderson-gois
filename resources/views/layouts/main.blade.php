@@ -160,6 +160,18 @@
     <!-- Rodapé -->
     <footer class="site-footer">
         <div class="container">
+            <p class="site-footer-contact">
+                @if(config('instituto.telefone'))
+                    <a href="tel:+55{{ preg_replace('/\D/', '', config('instituto.telefone')) }}">{{ config('instituto.telefone') }}</a>
+                @endif
+
+                <a
+                    href="https://www.instagram.com/{{ config('instituto.instagram') }}/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >{{ '@'.config('instituto.instagram') }}</a>
+            </p>
+
             <p class="mb-0">
                 &copy; {{ date('Y') }} Instituto Dr Anderson Gois.
                 Todos os direitos reservados.

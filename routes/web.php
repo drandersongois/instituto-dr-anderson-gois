@@ -3,12 +3,17 @@
 use App\Http\Controllers\AgendamentoController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\InscricaoController;
 use App\Http\Controllers\SiteEventos;
 use Illuminate\Support\Facades\Route;
 
 // Páginas públicas
 Route::get('/', [SiteEventos::class, 'index'])->name('home');
 Route::get('/events/{evento}', [SiteEventos::class, 'show'])->whereNumber('evento')->name('events.show');
+Route::post('/events/{evento}/inscricao', [InscricaoController::class, 'store'])
+    ->whereNumber('evento')
+    ->middleware('throttle:5,1')
+    ->name('inscricoes.store');
 
 // Autenticação
 Route::middleware('guest')->group(function () {

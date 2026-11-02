@@ -45,5 +45,6 @@ return [
         'data_hora' => 'data e hora',
         'status' => 'status',
         'observacoes' => 'observações',
+        'mensagem' => 'mensagem',
     ],
 ];

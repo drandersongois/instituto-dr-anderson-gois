@@ -193,6 +193,28 @@ a {
     text-align: center;
 }
 
+.site-footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+
+    margin-bottom: 12px;
+
+    font-size: 1rem;
+}
+
+.site-footer-contact a {
+    color: var(--color-orange-hover);
+    text-decoration: none;
+}
+
+.site-footer-contact a:hover,
+.site-footer-contact a:focus-visible {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
 /* ========================================
    6. Responsividade
 ======================================== */
@@ -1036,6 +1058,33 @@ a {
     padding-top: 20px;
 
     border-top: 1px solid var(--color-border);
+}
+
+.event-signup {
+    margin-top: 40px;
+    padding: 28px;
+    scroll-margin-top: 24px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+
+    background-color: var(--color-white);
+}
+
+.event-signup .event-show-subtitle {
+    margin-top: 0;
+}
+
+.event-signup-trap {
+    position: absolute;
+    left: -9999px;
+}
+
+.event-signup-note {
+    margin-bottom: 16px;
+
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
 }
 
 /* ========================================

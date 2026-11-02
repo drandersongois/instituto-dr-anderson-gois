@@ -71,6 +71,26 @@ php artisan serve
 
 Acesse http://127.0.0.1:8000.
 
+### Inscrições por e-mail e contato
+
+O formulário da página de cada curso envia a inscrição para `INSCRICOES_EMAIL`. Com `MAIL_MAILER=log`, nenhum e-mail sai: a mensagem só é gravada em `storage/logs/laravel.log`. Para envio real pelo Gmail, crie uma senha de app na conta Google e ajuste o `.env`:
+
+```dotenv
+MAIL_MAILER=smtp
+MAIL_SCHEME=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=seu-email@gmail.com
+MAIL_PASSWORD=sua-senha-de-app
+MAIL_FROM_ADDRESS=seu-email@gmail.com
+
+INSCRICOES_EMAIL=drandersongois@gmail.com
+CONTATO_TELEFONE="(75) 00000-0000"
+CONTATO_INSTAGRAM=drandersongois
+```
+
+O telefone só aparece no rodapé quando `CONTATO_TELEFONE` está preenchido.
+
 ## Usuários de demonstração
 
 | Perfil | Usuário | Senha |
