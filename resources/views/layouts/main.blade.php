@@ -74,6 +74,12 @@
 
                         @auth
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('inscricoes.index') }}">
+                                    Inscrições
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('clientes.index') }}">
                                     Alunos
                                 </a>

@@ -68,6 +68,10 @@ class SiteEventos extends Controller
             return back()->with('erro', 'Este curso tem agendamentos e não pode ser excluído.');
         }
 
+        if ($evento->inscricoes()->exists()) {
+            return back()->with('erro', 'Este curso tem inscrições e não pode ser excluído.');
+        }
+
         $this->apagarImagem($evento);
         $evento->delete();
 

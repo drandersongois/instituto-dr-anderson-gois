@@ -22,6 +22,7 @@ O site divulga os cursos de ortodontia, DTM e bruxismo, estética e harmonizaç�
 | --- | --- | --- | --- |
 | Ver e buscar cursos públicos | Sim | Sim | Sim |
 | Ver cursos privados | Não | Sim | Sim |
+| Listar e buscar alunos inscritos | Não | Sim | Sim |
 | Listar, criar e editar alunos e agendamentos | Não | Sim | Sim |
 | Excluir alunos e agendamentos | Não | Não | Sim |
 | Criar, editar e excluir cursos | Não | Não | Sim |
@@ -73,7 +74,7 @@ Acesse http://127.0.0.1:8000.
 
 ### Inscrições por e-mail e contato
 
-O formulário da página de cada curso envia a inscrição para `INSCRICOES_EMAIL`. Com `MAIL_MAILER=log`, nenhum e-mail sai: a mensagem só é gravada em `storage/logs/laravel.log`. Para envio real pelo Gmail, crie uma senha de app na conta Google e ajuste o `.env`:
+O formulário da página de cada curso salva a inscrição na tabela `inscricoes` e a envia para `INSCRICOES_EMAIL`. A equipe consulta as inscrições em `/inscricoes`, após o login. Com `MAIL_MAILER=log`, nenhum e-mail sai: a mensagem só é gravada em `storage/logs/laravel.log`. Para envio real pelo Gmail, crie uma senha de app na conta Google e ajuste o `.env`:
 
 ```dotenv
 MAIL_MAILER=smtp

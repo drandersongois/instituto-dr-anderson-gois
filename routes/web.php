@@ -25,6 +25,7 @@ Route::post('/logout', [AuthController::class, 'destroy'])->middleware('auth')->
 
 // Administrador e atendente
 Route::middleware('auth')->group(function () {
+    Route::get('/inscricoes', [InscricaoController::class, 'index'])->name('inscricoes.index');
     Route::resource('clientes', ClienteController::class)->except(['show', 'destroy']);
     Route::resource('agendamentos', AgendamentoController::class)->except(['show', 'destroy']);
 });

@@ -96,6 +96,84 @@
                                 @enderror
                             </div>
 
+                            <div class="col-md-6">
+                                <label for="cpf" class="form-label">CPF</label>
+                                <input
+                                    type="text"
+                                    class="form-control @error('cpf') is-invalid @enderror"
+                                    id="cpf"
+                                    name="cpf"
+                                    value="{{ old('cpf') }}"
+                                    maxlength="14"
+                                    inputmode="numeric"
+                                    placeholder="000.000.000-00"
+                                    required
+                                >
+                                @error('cpf')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="data_nascimento" class="form-label">Data de nascimento</label>
+                                <input
+                                    type="date"
+                                    class="form-control @error('data_nascimento') is-invalid @enderror"
+                                    id="data_nascimento"
+                                    name="data_nascimento"
+                                    value="{{ old('data_nascimento') }}"
+                                    max="{{ now()->subDay()->format('Y-m-d') }}"
+                                    autocomplete="bday"
+                                    required
+                                >
+                                @error('data_nascimento')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-12">
+                                <fieldset>
+                                    <legend class="form-label fs-6">Sexo</legend>
+
+                                    @foreach(\App\Http\Controllers\InscricaoController::SEXOS as $sexo)
+                                        <div class="form-check form-check-inline">
+                                            <input
+                                                class="form-check-input @error('sexo') is-invalid @enderror"
+                                                type="radio"
+                                                name="sexo"
+                                                id="sexo-{{ $sexo }}"
+                                                value="{{ $sexo }}"
+                                                @checked(old('sexo') === $sexo)
+                                                required
+                                            >
+                                            <label class="form-check-label" for="sexo-{{ $sexo }}">{{ $sexo }}</label>
+                                        </div>
+                                    @endforeach
+
+                                    @error('sexo')
+                                        <div class="invalid-feedback d-block">{{ $message }}</div>
+                                    @enderror
+                                </fieldset>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="endereco" class="form-label">Endereço</label>
+                                <input
+                                    type="text"
+                                    class="form-control @error('endereco') is-invalid @enderror"
+                                    id="endereco"
+                                    name="endereco"
+                                    value="{{ old('endereco') }}"
+                                    maxlength="500"
+                                    autocomplete="street-address"
+                                    placeholder="Rua, número, bairro, cidade e estado"
+                                    required
+                                >
+                                @error('endereco')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
                             <div class="col-12">
                                 <label for="cro" class="form-label">CRO (opcional)</label>
                                 <input

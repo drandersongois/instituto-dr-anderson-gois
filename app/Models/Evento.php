@@ -37,6 +37,11 @@ class Evento extends Model
         return $this->hasMany(Agendamento::class);
     }
 
+    public function inscricoes(): HasMany
+    {
+        return $this->hasMany(Inscricao::class);
+    }
+
     public function imagemUrl(): string
     {
         return asset('img/eventos_img/'.($this->imagem ?: 'curso-padrao.svg'));

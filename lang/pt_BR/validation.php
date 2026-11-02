@@ -9,6 +9,7 @@ return [
     'in' => 'O valor selecionado em :attribute é inválido.',
     'date' => 'Informe uma data válida em :attribute.',
     'after' => 'O campo :attribute deve ser uma data futura.',
+    'before' => 'O campo :attribute deve ser uma data passada.',
     'integer' => 'O campo :attribute deve ser um número inteiro.',
     'numeric' => 'O campo :attribute deve ser um número.',
     'boolean' => 'O valor de :attribute é inválido.',
@@ -46,5 +47,9 @@ return [
         'status' => 'status',
         'observacoes' => 'observações',
         'mensagem' => 'mensagem',
+        'cpf' => 'CPF',
+        'data_nascimento' => 'data de nascimento',
+        'sexo' => 'sexo',
+        'endereco' => 'endereço',
     ],
 ];
