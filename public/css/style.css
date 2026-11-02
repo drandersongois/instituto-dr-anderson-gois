@@ -1167,6 +1167,16 @@ a {
     color: #991b1b;
 }
 
+.status-pago {
+    background-color: #ecfdf5;
+    color: #065f46;
+}
+
+.status-nao-pago {
+    background-color: #fef2f2;
+    color: #991b1b;
+}
+
 @media (max-width: 575.98px) {
     .about-content {
         flex-direction: column;

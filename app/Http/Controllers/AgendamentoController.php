@@ -61,7 +61,7 @@ class AgendamentoController extends Controller
 
     private function validar(Request $request, ?Agendamento $agendamento = null): array
     {
-        return $request->validate([
+        $dados = $request->validate([
             'cliente_id' => [
                 'required',
                 'exists:clientes,id',
@@ -74,8 +74,30 @@ class AgendamentoController extends Controller
             'data_hora' => $agendamento ? ['required', 'date'] : ['required', 'date', 'after:now'],
             'status' => ['required', Rule::in(array_keys(Agendamento::STATUS))],
             'observacoes' => ['nullable', 'string', 'max:1000'],
+            'pago' => ['nullable', 'boolean'],
+            'data_pagamento' => [
+                'nullable',
+                'required_if:pago,1',
+                'date',
+                'before_or_equal:'.now('America/Bahia')->toDateString(),
+            ],
+            'forma_pagamento' => [
+                'nullable',
+                'required_if:pago,1',
+                Rule::in(array_keys(Agendamento::FORMAS_PAGAMENTO)),
+            ],
         ], [
             'cliente_id.unique' => 'Este aluno já tem agendamento neste curso.',
         ]);
+
+        $dados['pago'] = $request->boolean('pago');
+
+        // Sem pagamento, não ficam data nem forma de um registro anterior.
+        if (! $dados['pago']) {
+            $dados['data_pagamento'] = null;
+            $dados['forma_pagamento'] = null;
+        }
+
+        return $dados;
     }
 }

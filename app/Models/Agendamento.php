@@ -14,11 +14,30 @@ class Agendamento extends Model
         'cancelado' => 'Cancelado',
     ];
 
-    protected $fillable = ['cliente_id', 'evento_id', 'data_hora', 'status', 'observacoes'];
+    public const FORMAS_PAGAMENTO = [
+        'dinheiro' => 'Dinheiro',
+        'pix' => 'Pix',
+        'cartao' => 'Cartão',
+    ];
+
+    protected $fillable = [
+        'cliente_id',
+        'evento_id',
+        'data_hora',
+        'status',
+        'observacoes',
+        'pago',
+        'data_pagamento',
+        'forma_pagamento',
+    ];
 
     protected function casts(): array
     {
-        return ['data_hora' => 'datetime'];
+        return [
+            'data_hora' => 'datetime',
+            'pago' => 'boolean',
+            'data_pagamento' => 'date',
+        ];
     }
 
     public function cliente(): BelongsTo

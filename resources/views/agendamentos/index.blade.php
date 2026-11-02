@@ -28,6 +28,9 @@
                             <th scope="col">Aluno</th>
                             <th scope="col">Curso</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Pago</th>
+                            <th scope="col">Data do pagamento</th>
+                            <th scope="col">Forma de pagamento</th>
                             <th scope="col">Registrado por</th>
                             <th scope="col" class="text-end">Ações</th>
                         </tr>
@@ -43,6 +46,13 @@
                                         {{ \App\Models\Agendamento::STATUS[$agendamento->status] ?? $agendamento->status }}
                                     </span>
                                 </td>
+                                <td>
+                                    <span class="status-badge {{ $agendamento->pago ? 'status-pago' : 'status-nao-pago' }}">
+                                        {{ $agendamento->pago ? 'Sim' : 'Não' }}
+                                    </span>
+                                </td>
+                                <td class="text-nowrap">{{ $agendamento->data_pagamento?->format('d/m/Y') ?? '—' }}</td>
+                                <td>{{ \App\Models\Agendamento::FORMAS_PAGAMENTO[$agendamento->forma_pagamento] ?? '—' }}</td>
                                 <td>{{ $agendamento->responsavel?->name ?? '—' }}</td>
                                 <td>
                                     <div class="table-actions">

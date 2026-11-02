@@ -107,6 +107,58 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <label for="pago" class="form-label">Pago</label>
+                            <select
+                                name="pago"
+                                id="pago"
+                                class="form-select @error('pago') is-invalid @enderror"
+                                required
+                            >
+                                <option value="0" @selected((string) old('pago', (int) $agendamento->pago) === '0')>Não</option>
+                                <option value="1" @selected((string) old('pago', (int) $agendamento->pago) === '1')>Sim</option>
+                            </select>
+                            @error('pago')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <label for="data_pagamento" class="form-label">Data do pagamento</label>
+                            <input
+                                type="date"
+                                class="form-control @error('data_pagamento') is-invalid @enderror"
+                                id="data_pagamento"
+                                name="data_pagamento"
+                                value="{{ old('data_pagamento', $agendamento->data_pagamento?->format('Y-m-d')) }}"
+                                max="{{ now('America/Bahia')->toDateString() }}"
+                            >
+                            @error('data_pagamento')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <label for="forma_pagamento" class="form-label">Forma de pagamento</label>
+                            <select
+                                name="forma_pagamento"
+                                id="forma_pagamento"
+                                class="form-select @error('forma_pagamento') is-invalid @enderror"
+                            >
+                                <option value="">Selecione</option>
+                                @foreach(\App\Models\Agendamento::FORMAS_PAGAMENTO as $valor => $rotulo)
+                                    <option value="{{ $valor }}" @selected(old('forma_pagamento', $agendamento->forma_pagamento) === $valor)>
+                                        {{ $rotulo }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('forma_pagamento')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
                     <div class="mb-4">
                         <label for="observacoes" class="form-label">Observações (opcional)</label>
                         <textarea
